@@ -119,11 +119,6 @@ def email_analysis(filename, exclude_private_ip, check_spf, file_output):
                 if mail_cc:
                     mail_cc_list.append(mail_cc)
 
-            if mail_ccList:
-                # Remove possible duplicates and create a numbered dictionary
-                mail_cc_list = dict(zip(range(len(list(set(mail_cc_list)))), list(set(mail_cc_list))))
-                result_meioc["cc"] = mail_cc_list
-
         if msg["Envelope-to"]:
 
             mail_envelopeto = re.findall("[A-Za-z0-9.!#$%&'*+\/=?^_`{|}~\-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}",
